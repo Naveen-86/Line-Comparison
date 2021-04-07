@@ -1,4 +1,8 @@
+import java.io.*;
+import java.math.*;
 import java.util.*;
+import java.lang.Math;
+
 
 public class Linecomp{
 
@@ -50,6 +54,10 @@ public class Linecomp{
 		}else{
 			System.out.println("Both the lines are not equal");
 		}
+       Double l1 = new Double(len);
+		 Double l2 = new Double(len1);
 
+
+       System.out.println(l1.compareTo(l2));
    }
 }
