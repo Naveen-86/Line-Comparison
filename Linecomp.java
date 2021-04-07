@@ -24,5 +24,32 @@ public class Linecomp{
 
       double len = Math.sqrt((Math.pow((x2-x1),2))+(Math.pow((y2-y1),2)));
       System.out.println("Length of line : " + len);
+
+      Scanner e = new Scanner(System.in);
+      System.out.println("Enter x3 value");
+      int x3 = e.nextInt();
+
+
+      Scanner f = new Scanner(System.in);
+      System.out.println("Enter y3 value");
+      int y3 = f.nextInt();
+
+      Scanner g = new Scanner(System.in);
+      System.out.println("Enter x4 value");
+      int x4 = g.nextInt();
+
+      Scanner h = new Scanner(System.in);
+      System.out.println("Enter y4 value");
+      int y4 = h.nextInt();
+
+      double len1 = Math.sqrt((Math.pow((x4-x3),2))+(Math.pow((y4-y3),2)));
+      System.out.println("Length of line : " + len1);
+
+      if( len == len1 ){
+			System.out.println("Both the lines are equal");
+		}else{
+			System.out.println("Both the lines are not equal");
+		}
+
    }
 }
