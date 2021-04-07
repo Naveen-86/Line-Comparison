@@ -4,60 +4,53 @@ import java.util.*;
 import java.lang.Math;
 
 
-public class Linecomp{
+import java.util.*;
 
-  public static void main(String[] args){
-      System.out.println("Welcome to Line Comparison Computation Program");
+    public class Linecomp{
 
-      Scanner a = new Scanner(System.in);
-      System.out.println("Enter x1 value");
-      int x1 = a.nextInt();
+         //Creating a constructor for reading inputs from user
+	static int UserInput(){
+		Scanner input = new Scanner(System.in);
+		int x = input.nextInt();
+		return x;
+	}
 
+	//Creating a constructor for calculating lengths of the lines
+	static double Length(int a, int b, int c, int d){
+		double lenOfLine = Math.sqrt(Math.pow((c - a),2) + Math.pow((d - b),2));
+		return lenOfLine;
+	}
 
-      Scanner b = new Scanner(System.in);
-      System.out.println("Enter y1 value");
-      int y1 = b.nextInt();
+	public static void main(String[] args){
+		System.out.println("Welcome to Line Comparison Computation");
 
-      Scanner c = new Scanner(System.in);
-      System.out.println("Enter x2 value");
-      int x2 = c.nextInt();
+		//reading inputs by calling static method UserInput()
+		int x1 = UserInput();
+		int x2 = UserInput();
+		int x3 = UserInput();
+		int x4 = UserInput();
+		int y1 = UserInput();
+		int y2 = UserInput();
+		int y3 = UserInput();
+		int y4 = UserInput();
 
-      Scanner d = new Scanner(System.in);
-      System.out.println("Enter y2 value");
-      int y2 = d.nextInt();
+		//creating objects for finding lengths
+		double lenOfLine1 = Length(x1, y1, x2, y2);
+		double lenOfLine2 = Length(x3, y3, x4, y4);
 
-      double len = Math.sqrt((Math.pow((x2-x1),2))+(Math.pow((y2-y1),2)));
-      System.out.println("Length of line : " + len);
+		System.out.println("length of First Line: " + lenOfLine1 );
 
-      Scanner e = new Scanner(System.in);
-      System.out.println("Enter x3 value");
-      int x3 = e.nextInt();
+		System.out.println("length of Second Line: " + lenOfLine2 );
 
+		Double len1 = new Double(lenOfLine1);
+		Double len2 = new Double(lenOfLine2);
 
-      Scanner f = new Scanner(System.in);
-      System.out.println("Enter y3 value");
-      int y3 = f.nextInt();
+		//checking whether both the lines are equal or not
+		System.out.println(len1.equals(len2));
 
-      Scanner g = new Scanner(System.in);
-      System.out.println("Enter x4 value");
-      int x4 = g.nextInt();
-
-      Scanner h = new Scanner(System.in);
-      System.out.println("Enter y4 value");
-      int y4 = h.nextInt();
-
-      double len1 = Math.sqrt((Math.pow((x4-x3),2))+(Math.pow((y4-y3),2)));
-      System.out.println("Length of line : " + len1);
-
-      if( len == len1 ){
-			System.out.println("Both the lines are equal");
-		}else{
-			System.out.println("Both the lines are not equal");
-		}
-       Double l1 = new Double(len);
-		 Double l2 = new Double(len1);
-
-
-       System.out.println(l1.compareTo(l2));
-   }
+		//comparing both the lines
+		System.out.println(len1.compareTo(len2));
+	}
 }
+
+
